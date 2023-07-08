@@ -131,3 +131,16 @@ function addToCard(id) {
     total.innerText = totalPrice.toFixed(2);
     quantity.innerText = count;
   }
+  function changeQuantity(id, quantity) {
+    let item = listCards.find(item => item.id === id);
+  
+    if (item) {
+      if (quantity === 0) {
+        listCards = listCards.filter(item => item.id !== id);
+      } else {
+        item.quantity = quantity;
+      }
+  
+      reloadCard();
+    }
+  }
