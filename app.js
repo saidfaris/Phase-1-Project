@@ -20,6 +20,11 @@ fetch('db.json')
     console.log('Error:', error);
   });
 
+
+
+
+
+
 let openShopping = document.querySelector('.shopping');
 let closeShopping = document.querySelector('.closeShopping');
 let list = document.querySelector('.list');
@@ -88,6 +93,11 @@ let products = [
 ];
 let listCards = [];
 
+
+
+
+
+
 function addToCard(id) {
   let selectedProduct = products.find(product => product.id === id);
 
@@ -133,6 +143,11 @@ function reloadCard() {
   quantity.innerText = count;
 }
 
+
+
+
+
+
 function changeQuantity(id, quantity) {
   let item = listCards.find(item => item.id === id);
 
@@ -146,3 +161,38 @@ function changeQuantity(id, quantity) {
     reloadCard();
   }
 }
+
+
+
+
+
+
+
+
+function searchItems() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const filteredItems = products.filter(product => product.name.toLowerCase().includes(searchInput));
+    const list = document.querySelector('.list');
+  
+    list.innerHTML = '';
+  
+    if (filteredItems.length === 0) {
+      const notFoundDiv = document.createElement('div');
+      notFoundDiv.classList.add('not-found');
+      notFoundDiv.innerText = 'Item not found';
+      list.appendChild(notFoundDiv);
+    } else {
+      filteredItems.forEach(item => {
+        const newDiv = document.createElement('div');
+        newDiv.classList.add('item');
+        newDiv.innerHTML = `
+          <img src="${item.image}">
+          <div class="title">${item.name}</div>
+          <div class="price">$${item.price.toFixed(2)}</div>
+          <button onclick="addToCard(${item.id})">Add to Cart</button>
+        `;
+        list.appendChild(newDiv);
+      });
+    }
+  }
+  
