@@ -106,3 +106,28 @@ function addToCard(id) {
       reloadCard();
     }
   }
+  function reloadCard() {
+    listCard.innerHTML = '';
+    let count = 0;
+    let totalPrice = 0;
+  
+    listCards.forEach(item => {
+      let newDiv = document.createElement('li');
+      newDiv.innerHTML = `
+        <div><img src="${item.image}" /></div>
+        <div>${item.name}</div>
+        <div>${(item.price * item.quantity).toFixed(2)}</div>
+        <div>
+          <button onclick="changeQuantity(${item.id}, ${item.quantity - 1})">-</button>
+          <div class="count">${item.quantity}</div>
+          <button onclick="changeQuantity(${item.id}, ${item.quantity + 1})">+</button>
+        </div>`;
+      listCard.appendChild(newDiv);
+  
+      count += item.quantity;
+      totalPrice += item.price * item.quantity;
+    });
+  
+    total.innerText = totalPrice.toFixed(2);
+    quantity.innerText = count;
+  }
