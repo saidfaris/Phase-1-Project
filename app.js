@@ -20,8 +20,7 @@ fetch('db.json')
     console.log('Error:', error);
   });
 
-
-  let openShopping = document.querySelector('.shopping');
+let openShopping = document.querySelector('.shopping');
 let closeShopping = document.querySelector('.closeShopping');
 let list = document.querySelector('.list');
 let listCard = document.querySelector('.listCard');
@@ -94,53 +93,56 @@ function addToCard(id) {
 
   if (selectedProduct) {
     let existingItem = listCards.find(item => item.id === id);
+
     if (existingItem) {
-        existingItem.quantity++;
-      } else {
-        listCards.push({
-          ...selectedProduct,
-          quantity: 1
-        });
-      }
-  
-      reloadCard();
+      existingItem.quantity++;
+    } else {
+      listCards.push({
+        ...selectedProduct,
+        quantity: 1
+      });
     }
+
+    reloadCard();
   }
-  function reloadCard() {
-    listCard.innerHTML = '';
-    let count = 0;
-    let totalPrice = 0;
-  
-    listCards.forEach(item => {
-      let newDiv = document.createElement('li');
-      newDiv.innerHTML = `
-        <div><img src="${item.image}" /></div>
-        <div>${item.name}</div>
-        <div>${(item.price * item.quantity).toFixed(2)}</div>
-        <div>
-          <button onclick="changeQuantity(${item.id}, ${item.quantity - 1})">-</button>
-          <div class="count">${item.quantity}</div>
-          <button onclick="changeQuantity(${item.id}, ${item.quantity + 1})">+</button>
-        </div>`;
-      listCard.appendChild(newDiv);
-  
-      count += item.quantity;
-      totalPrice += item.price * item.quantity;
-    });
-  
-    total.innerText = totalPrice.toFixed(2);
-    quantity.innerText = count;
-  }
-  function changeQuantity(id, quantity) {
-    let item = listCards.find(item => item.id === id);
-  
-    if (item) {
-      if (quantity === 0) {
-        listCards = listCards.filter(item => item.id !== id);
-      } else {
-        item.quantity = quantity;
-      }
-  
-      reloadCard();
+}
+
+function reloadCard() {
+  listCard.innerHTML = '';
+  let count = 0;
+  let totalPrice = 0;
+
+  listCards.forEach(item => {
+    let newDiv = document.createElement('li');
+    newDiv.innerHTML = `
+      <div><img src="${item.image}" /></div>
+      <div>${item.name}</div>
+      <div>${(item.price * item.quantity).toFixed(2)}</div>
+      <div>
+        <button onclick="changeQuantity(${item.id}, ${item.quantity - 1})">-</button>
+        <div class="count">${item.quantity}</div>
+        <button onclick="changeQuantity(${item.id}, ${item.quantity + 1})">+</button>
+      </div>`;
+    listCard.appendChild(newDiv);
+
+    count += item.quantity;
+    totalPrice += item.price * item.quantity;
+  });
+
+  total.innerText = totalPrice.toFixed(2);
+  quantity.innerText = count;
+}
+
+function changeQuantity(id, quantity) {
+  let item = listCards.find(item => item.id === id);
+
+  if (item) {
+    if (quantity === 0) {
+      listCards = listCards.filter(item => item.id !== id);
+    } else {
+      item.quantity = quantity;
     }
+
+    reloadCard();
   }
+}
