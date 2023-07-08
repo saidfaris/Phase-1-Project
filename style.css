@@ -38,3 +38,6 @@ header .shopping span{
     row-gap: 20px;
     margin-top: 50px;
 }
+.list .item{
+    text-align: center;
+    background-color: #DCE0E1;}
