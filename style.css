@@ -40,4 +40,6 @@ header .shopping span{
 }
 .list .item{
     text-align: center;
-    background-color: #DCE0E1;}
+    background-color: #DCE0E1;
+    padding: 20px;}
+    
