@@ -23,8 +23,6 @@ fetch('db.json')
 
 
 
-
-
 let openShopping = document.querySelector('.shopping');
 let closeShopping = document.querySelector('.closeShopping');
 let list = document.querySelector('.list');
@@ -91,13 +89,12 @@ let products = [
     "image": "images/cheese.png"
   }
 ];
+
+
+
+
+
 let listCards = [];
-
-
-
-
-
-
 function addToCard(id) {
   let selectedProduct = products.find(product => product.id === id);
 
@@ -196,3 +193,31 @@ function searchItems() {
     }
   }
   
+
+
+
+
+
+
+
+
+
+
+  let isDarkMode = false;
+const darkModeToggle = document.querySelector('.dark-mode-toggle');
+
+function toggleDarkMode() {
+  isDarkMode = !isDarkMode;
+  const body = document.querySelector('body');
+  const items = document.querySelectorAll('.item');
+  
+  if (isDarkMode) {
+    body.classList.add('dark-mode');
+    darkModeToggle.textContent = 'Light Mode';
+    items.forEach(item => item.classList.add('dark-mode'));
+  } else {
+    body.classList.remove('dark-mode');
+    darkModeToggle.textContent = 'Dark Mode';
+    items.forEach(item => item.classList.remove('dark-mode'));
+  }
+}

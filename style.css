@@ -1,5 +1,5 @@
 body {
-    background-color: #E3E7E8;
+    background-color: #4db7d1;
     font-family: system-ui;
 }
 
@@ -36,6 +36,19 @@ header .shopping span {
     left: 80%;
     padding: 3px 10px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .list {
     display: grid;
@@ -75,6 +88,16 @@ header .shopping span {
     width: 100%;
     padding: 10px;
 }
+
+
+
+
+
+
+
+
+
+
 
 .card {
     position: fixed;
@@ -165,5 +188,44 @@ header .shopping span {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+  
+  header .dark-mode-toggle {
+    background-color: transparent;
+    border: none;
+    color: #000;
+    cursor: pointer;
+  }
+  body.dark-mode {
+    background-color: #1C1F25;
+    color: #fff;
+  }
+  
+  header.dark-mode {
+    background-color: #1C1F25;
+    color: #fff;
+  }
+  
+  .list .item.dark-mode {
+    background-color: #35393F;
+    color: #fff;
   }
   
