@@ -40,54 +40,54 @@ closeShopping.addEventListener('click', () => {
 });
 
 let products = [
-  {
-    "id": 1,
-    "name": "Apples",
-    "category": "Fruits",
-    "price": 1.99,
-    "quantity": 10,
-    "image": "images/apple.png"
-  },
-  {
-    "id": 2,
-    "name": "Bananas",
-    "category": "Fruits",
-    "price": 0.99,
-    "quantity": 15,
-    "image": "images/banana.png"
-  },
-  {
-    "id": 3,
-    "name": "Milk",
-    "category": "Dairy",
-    "price": 2.49,
-    "quantity": 5,
-    "image": "images/milk.png"
-  },
-  {
-    "id": 4,
-    "name": "Eggs",
-    "category": "Dairy",
-    "price": 1.79,
-    "quantity": 12,
-    "image": "images/eggs.png"
-  },
-  {
-    "id": 5,
-    "name": "Bread",
-    "category": "Bakery",
-    "price": 2.99,
-    "quantity": 8,
-    "image": "images/bread.png"
-  },
-  {
-    "id": 6,
-    "name": "Cheese",
-    "category": "Meat",
-    "price": 4.99,
-    "quantity": 3,
-    "image": "images/cheese.png"
-  }
+    {
+        "id": 1,
+        "name": "Apples",
+        "category": "Fruits",
+        "price": 1.99,
+        "quantity": 10,
+        "image": "images/apple.png"
+      },
+      {
+        "id": 2,
+        "name": "Bananas",
+        "category": "Fruits",
+        "price": 0.99,
+        "quantity": 15,
+        "image": "images/banana.png"
+      },
+      {
+        "id": 3,
+        "name": "Milk",
+        "category": "Dairy",
+        "price": 2.49,
+        "quantity": 5,
+        "image": "images/milk.png"
+      },
+      {
+        "id": 4,
+        "name": "Eggs",
+        "category": "Dairy",
+        "price": 1.79,
+        "quantity": 12,
+        "image": "images/eggs.png"
+      },
+      {
+        "id": 5,
+        "name": "Bread",
+        "category": "Bakery",
+        "price": 2.99,
+        "quantity": 8,
+        "image": "images/bread.png"
+      },
+      {
+        "id": 6,
+        "name": "Cheese",
+        "category": "dairy",
+        "price": 4.99,
+        "quantity": 3,
+        "image": "images/cheese.png"
+      }
 ];
 
 

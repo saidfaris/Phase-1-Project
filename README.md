@@ -1,38 +1,48 @@
 Phase 1 Independent Project
+Easy Grocery
+Author: Said Isaack
+GitHub: https://github.com/saidfaris
+
+Easy Grocery is a simple web application that allows users to browse and purchase grocery items. The application fetches data from a JSON file and dynamically displays the available grocery items. Users can search for specific items, add them to their shopping cart, and view the total price of their selected items.
 
 
-This project, the Phase 1 Independent Project, is a web application for an Easy Grocery Store. It allows users to explore a wide range of grocery products and add them to their shopping cart.
+
 
 Features
-The project includes the following features:
+Item Search: Users can enter a search query in the search bar to filter the displayed grocery items based on their name.
+Add to Cart: Each grocery item card has an "Add to Cart" button that users can click to add the item to their shopping cart.
+Shopping Cart: Users can view the items they have added to their shopping cart. The cart displays the item details, allows users to adjust the quantity of each item, and shows the total price of all selected items.
+Dark Mode: The application includes a dark mode toggle button that users can click to switch between a light and dark theme.
 
-Displaying a list of grocery products, including their name, price, and image.
-Adding products to the shopping cart by clicking the "Add to Cart" button.
-Dynamically updating the quantity and total price in the shopping cart.
-Allowing users to remove items from the shopping cart or adjust the quantity.
-Responsive design for a seamless experience on different devices.
+
+
+
 Technologies Used
-The project is built using the following technologies:
+HTML
+CSS
+JavaScript
 
-HTML: Structuring the web page and its elements.
-CSS: Styling the page to create an attractive and user-friendly interface.
-JavaScript: Handling the dynamic behavior of the application, such as fetching data, updating the shopping cart, and interacting with the user.
-JSON: Storing the grocery product data in a structured format.
-JSON Server: Simulating a RESTful API to serve the grocery product data.
-Font Awesome: Providing icons for the user interface.
+
+
+
 Installation
-To run the Phase 1 Independent Project on your local machine, follow these steps:
+Clone the repository: git clone https://github.com/saidfaris/Phase-1-Project
+Navigate to the project directory: cd easy-grocery
+Open the index.html file in your preferred web browser.
 
-Clone the project repository from GitHub.
-Open the project directory in your code editor.
-Install any necessary dependencies.
-Start a local development server.
-Access the application in your web browser.
-Detailed installation instructions may vary depending on your development environment and setup.
 
 Usage
-Once the application is running, users can browse the grocery products displayed on the page. They can click the "Add to Cart" button to add products to their shopping cart. The shopping cart will dynamically update the quantity and total price as items are added or removed. Users can also adjust the quantity of items in the shopping cart or remove them entirely.
+Upon opening the application, you will see a list of grocery items displayed on the page.
+Use the search bar at the top to enter a search query for specific grocery items. The results will be filtered dynamically as you type.
 
-Author
-This project was created by Said Isaack.
- You can find more about the author on their GitHub profile.https://github.com/saidfaris/
+To add an item to your shopping cart, click the "Add to Cart" button on the respective item card.
+Click the shopping cart icon to open the shopping cart panel. Here, you can view the items in your cart, adjust their quantities, and see the total price.
+To remove an item from the cart, set its quantity to 0 using the quantity buttons.
+To switch to dark mode, click the "Dark Mode" toggle button. Click it again to switch back to light mode.
+Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to create a pull request or submit an issue on the GitHub repository.
+
+
+
+
+

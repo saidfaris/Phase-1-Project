@@ -43,7 +43,7 @@
     {
         "id": 6,
         "name": "Cheese",
-        "category": "condencedmilk",
+        "category": "dairy",
         "price": 4.99,
         "quantity": 3,
         "image": "images/cheese.png"   
