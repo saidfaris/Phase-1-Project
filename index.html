@@ -18,12 +18,27 @@
                     <button onclick="searchItems()">Search</button>
                   </div>
 
+
+                  <button onclick="toggleAddProductForm()">Add Product</button>
+
+                  <div id="addProductForm" style="display: none;">
+                    <input type="text" id="productName" placeholder="Product Name">
+                    <input type="text" id="productCategory" placeholder="Category">
+                    <input type="number" id="productPrice" placeholder="Price">
+                    <input type="number" id="productQuantity" placeholder="Quantity">
+                    <input type="text" id="productImage" placeholder="Image URL">
+                    <button onclick="addProduct()">Add</button>
+                  </div>
+                  
+                  
+  
+                  
+
             </h1>
               <div class="shopping">
                 <img src="images/shopping (1).png">
                 <span class="quantity">0</span>
             </div>
-
             <button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
 
 
@@ -43,4 +58,4 @@
     </div>
  <script src="app.js"></script>
 </body>
-</html>
+</html>    

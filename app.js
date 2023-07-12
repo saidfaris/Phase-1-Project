@@ -221,3 +221,128 @@ function toggleDarkMode() {
     items.forEach(item => item.classList.remove('dark-mode'));
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+function toggleDarkMode() {
+  const body = document.querySelector('body');
+  const items = document.querySelectorAll('.item');
+
+  body.classList.toggle('dark-mode');
+  items.forEach(item => item.classList.toggle('dark-mode'));
+
+  const darkModeToggle = document.querySelector('.dark-mode-toggle');
+  if (body.classList.contains('dark-mode')) {
+    darkModeToggle.textContent = 'Light Mode';
+  } else {
+    darkModeToggle.textContent = 'Dark Mode';
+  }
+}
+
+function showAddProductModal() {
+  addProductModal.style.display = 'block';
+}
+function hideAddProductModal() {
+  addProductModal.style.display = 'none';
+}
+
+function addNewProduct() {
+  const productName = document.getElementById('productName').value;
+  const productCategory = document.getElementById('productCategory').value;
+  const productPrice = parseFloat(document.getElementById('productPrice').value);
+  const productQuantity = parseInt(document.getElementById('productQuantity').value);
+  const productImage = document.getElementById('productImage').value;
+
+  const newProduct = {
+    id: products.length + 1,
+    name: productName,
+    category: productCategory,
+    price: productPrice,
+    quantity: productQuantity,
+    image: productImage };
+
+    products.push(newProduct);
+    hideAddProductModal();
+    renderProduct(newProduct);
+  }
+  
+  function renderProduct(product) {
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('item');
+    newDiv.innerHTML = `
+      <img src="${product.image}">
+      <div class="title">${product.name}</div>
+      <div class="price">$${product.price.toFixed(2)}</div>
+      <button onclick="addToCard(${product.id})">Add to Cart</button>
+    `;
+    list.appendChild(newDiv);
+  }
+  
+  reloadCard();
+
+
+
+function toggleAddProductForm() {
+    const addProductForm = document.getElementById('addProductForm');
+    addProductForm.style.display = addProductForm.style.display === 'none' ? 'block' : 'none';
+  }
+  
+  function addProduct() {
+    const productName = document.getElementById('productName').value;
+    const productCategory = document.getElementById('productCategory').value;
+    const productPrice = parseFloat(document.getElementById('productPrice').value);
+    const productQuantity = parseInt(document.getElementById('productQuantity').value);
+    const productImage = document.getElementById('productImage').value;
+  
+    const newProduct = {
+      id: products.length + 1,
+      name: productName,
+      category: productCategory,
+      price: productPrice,
+      quantity: productQuantity,
+      image: productImage
+    };
+  
+    products.push(newProduct);
+  
+    clearProductForm();
+    toggleAddProductForm();
+    displayProducts();
+  }
+  
+  function clearProductForm() {
+    document.getElementById('productName').value = '';
+    document.getElementById('productCategory').value = '';
+    document.getElementById('productPrice').value = '';
+    document.getElementById('productQuantity').value = '';
+    document.getElementById('productImage').value = '';
+  }
+  
+  function displayProducts() {
+    const list = document.querySelector('.list');
+    list.innerHTML = '';
+  
+    products.forEach(product => {
+      const newDiv = document.createElement('div');
+      newDiv.classList.add('item');
+      newDiv.innerHTML = `
+        <img src="${product.image}">
+        <div class="title">${product.name}</div>
+        <div class="price">$${product.price.toFixed(2)}</div>
+        <button onclick="addToCard(${product.id})">Add to Cart</button>
+      `;
+      list.appendChild(newDiv);
+    });
+  }
+  
+  // Initial display of products
+  displayProducts();
+  
